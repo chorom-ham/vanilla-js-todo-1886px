@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
 html,
+
 body {
   margin: 0;
+  background-color: rgb(223, 247, 255);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+.h1{
+  padding-top: 20px;
+  text-align: center;
+  font-family: 'Gowun Dodum', sans-serif;
+}
+
+.sec1{
+  border: 10px solid rgb(62, 168, 255);
+  padding: 20px;/*박스 안쪽*/
+  margin: 20px;
 }
