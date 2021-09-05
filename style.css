@@ -13,13 +13,26 @@ body {
 }
 
 .h1{
-  padding-top: 20px;
+  padding-top: 1rem;
   text-align: center;
   font-family: 'Gowun Dodum', sans-serif;
 }
 
 .sec1{
-  border: 10px solid rgb(62, 168, 255);
-  padding: 20px;/*박스 안쪽*/
-  margin: 20px;
+  border: 0.2rem solid rgb(62, 168, 255);
+  padding: 0.2rem;/*박스 안쪽*/
+  margin: 2rem;
+}
+
+#input{
+  width: 88%;
+  height: 100%;
+}
+
+#submit{
+  height: 100%;
+}
+
+.sec2{
+  margin-left: 2rem;  
 }
