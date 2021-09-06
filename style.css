@@ -21,7 +21,7 @@ body {
 .sec1{
   border: 0.2rem solid rgb(62, 168, 255);
   padding: 0.2rem;/*박스 안쪽*/
-  margin: 2rem;
+  margin: 1rem;
 }
 
 #input{
@@ -35,4 +35,16 @@ body {
 
 .sec2{
   margin-left: 2rem;  
+}
+
+#delete-button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
 }
