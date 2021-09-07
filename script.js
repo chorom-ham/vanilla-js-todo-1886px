@@ -17,9 +17,12 @@ const addList = () => {
 
   input.type = "checkbox";
   input.id = "todo";
+  input.className = "input__checkbox";
   label.htmlFor = "todo";
   label.innerText = value;
   remove.innerText = "삭제";
+  remove.className = "delete-btn";
+  div.className = "todo-list";
   div.append(input);
   div.append(label);
   div.append(remove);

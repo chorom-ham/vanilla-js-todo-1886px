@@ -13,23 +13,27 @@
 
     <main>
       <form>
-        <input type="text" placeholder="할 일을 입력하세요" />
+        <input
+          class="input__add-list"
+          type="text"
+          placeholder="할 일을 입력하세요"
+        />
         <button>추가</button>
       </form>
-      <div>
-        <input type="checkbox" id="todo" />
+      <div class="todo-list">
+        <input class="input__checkbox" type="checkbox" id="todo" />
         <label for="todo">여기에 할 일이 추가됩니다</label>
-        <span>삭제</span>
+        <span class="delete-btn">삭제</span>
       </div>
-      <div>
-        <input type="checkbox" id="todo" />
+      <div class="todo-list">
+        <input type="input__checkbox" id="todo" />
         <label for="todo">체크박스를 눌러 할 일을 완료합니다</label>
-        <span>삭제</span>
+        <span class="delete-btn">삭제</span>
       </div>
-      <div>
-        <input type="checkbox" id="todo" />
+      <div class="todo-list">
+        <input type="input__checkbox" id="todo" />
         <label for="todo">오른쪽 삭제 버튼을 눌러 삭제하세요</label>
-        <span>삭제</span>
+        <span class="delete-btn">삭제</span>
       </div>
     </main>
   </body>
