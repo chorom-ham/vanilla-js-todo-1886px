@@ -1,6 +1,7 @@
 const main = document.querySelector("main");
 const form = document.querySelector("form");
 const newList = form.querySelector("input");
+const deleteBtns = main.querySelectorAll("span");
 
 const handleDelete = (event) => {
   const list = event.target.parentElement;
@@ -34,3 +35,6 @@ const handleSubmit = (event) => {
 };
 
 form.addEventListener("submit", handleSubmit);
+deleteBtns.forEach((btn) => {
+  btn.addEventListener("click", handleDelete);
+});
