@@ -1,7 +1,7 @@
-const main = document.querySelector("main");
+const todoLists = document.getElementById("todoLists");
 const form = document.querySelector("form");
 const newList = form.querySelector("input");
-const deleteBtns = main.querySelectorAll("span");
+const deleteBtns = document.querySelectorAll("span");
 
 const handleDelete = (event) => {
   const list = event.target.parentElement;
@@ -26,7 +26,7 @@ const addList = () => {
   div.append(input);
   div.append(label);
   div.append(remove);
-  main.append(div);
+  todoLists.append(div);
   newList.value = "";
 
   remove.addEventListener("click", handleDelete);
