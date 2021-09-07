@@ -2,6 +2,11 @@ const main = document.querySelector("main");
 const form = document.querySelector("form");
 const newList = form.querySelector("input");
 
+const handleDelete = (event) => {
+  const list = event.target.parentElement;
+  list.remove();
+};
+
 const addList = () => {
   const div = document.createElement("div");
   const input = document.createElement("input");
