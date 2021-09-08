@@ -1,17 +1,17 @@
 var button = document.getElementById('button');
 var input = document.getElementById('input');
 var list = document.getElementById('list');
-var cnt=1;
+var count = 1;
 
 function addItem(){
   var temp = document.createElement('li');
-  temp.setAttribute("id", "li"+cnt);
+  temp.setAttribute("id","li"+count);
   temp.innerHTML = input.value;
-  temp.innerHTML += "<button type='button' onclick='deleteItem("+cnt+")'>삭제</button>";
+  temp.innerHTML += "<button type='button' onclick='removeItem("+count+");'>삭제</button>";
   list.appendChild(temp);
- 
+  count++;
 }
-function deleteItem(){
-  var li= documet.getElementById('li'+cnt);
-  list.removeChild(li);
+function removeItem(count){
+  var itemToRemove= document.getElementById('li'+count);
+  list.removeChild(itemToRemove);
 }
