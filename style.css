@@ -11,9 +11,12 @@ body {
 }
 
 header {
-  padding: 6.25rem 0;
+  padding: 5rem 0;
   text-align: center;
-  background-color: antiquewhite;
+  color: white;
+  font-weight: 200;
+  background: linear-gradient(#8ec5fc, #e0c3fc);
+  font-size: 4rem;
 }
 
 main {
