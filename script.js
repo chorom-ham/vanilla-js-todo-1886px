@@ -1,7 +1,7 @@
 const todoLists = document.getElementById("todoLists");
 const form = document.querySelector("form");
-const newList = form.querySelector("input");
-const deleteBtns = document.querySelectorAll("span");
+const input = form.querySelector("input");
+const deleteBtns = document.querySelectorAll(".delete-btn");
 
 const handleDelete = (event) => {
   const list = event.target.parentElement;
@@ -10,24 +10,22 @@ const handleDelete = (event) => {
 
 const addList = () => {
   const div = document.createElement("div");
-  const input = document.createElement("input");
-  const label = document.createElement("label");
+  const newList = document.createElement("input");
+  const span = document.createElement("span");
   const remove = document.createElement("span");
-  const value = newList.value;
+  const value = input.value;
 
-  input.type = "checkbox";
-  input.id = "todo";
-  input.className = "input__checkbox";
-  label.htmlFor = "todo";
-  label.innerText = value;
+  newList.type = "checkbox";
+  newList.className = "input__checkbox";
+  span.innerText = value;
   remove.innerText = "삭제";
   remove.className = "delete-btn";
   div.className = "todo-list";
-  div.append(input);
-  div.append(label);
+  div.append(newList);
+  div.append(span);
   div.append(remove);
   todoLists.append(div);
-  newList.value = "";
+  input.value = "";
 
   remove.addEventListener("click", handleDelete);
 };
