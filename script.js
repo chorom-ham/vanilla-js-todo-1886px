@@ -1,9 +1,5 @@
 var list = document.getElementById("list");
 
-document.getElementById("input").onclick = function disappear() {
-  document.getElementById("input").innerText = "";
-};
-
 document.getElementById("submit").onclick = function makelist() {
   var li = document.createElement("li");
   li.innerText = document.getElementById("input").value;
@@ -16,8 +12,22 @@ document.getElementById("submit").onclick = function makelist() {
   li.appendChild(deleteButton);
 };
 
+deleteButton.addEventListener("click", cross);
+function cross(item) {
+  var str = item.target.parentNode.firstChild.innerText;
+  var result = str.strike();
+  document.getElementById("li").innerHTML = result;
+}
+
+/*deleteButton.addEventListener("click", cross);
+function cross(item) {
+  var str = item.target.parentNode.firstChild.innerText;
+  var result = str.strike();
+  str = result;
+}
+
 document.getElementById("deleteButton").onclick = function cross() {
   var str = getElementById("li");
   var result = str.strike();
-  str.replace = result;
-};
+  document.getElement("li").innerText = result;
+};*/
