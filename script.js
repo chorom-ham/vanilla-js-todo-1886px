@@ -3,17 +3,28 @@ const form = document.querySelector("form");
 const input = form.querySelector("input");
 const deleteBtns = document.querySelectorAll(".delete-btn");
 const todos = document.querySelectorAll(".todo");
+const boxes = document.querySelectorAll(".input__checkbox");
+
+const handleBoxClick = (event) => {
+  const checkbox = event.target;
+  const todo = checkbox.nextElementSibling;
+  if (checkbox.checked) {
+    todo.classList.add("checked");
+  } else {
+    todo.classList.remove("checked");
+  }
+  checkbox.checked = checkbox.checked ? true : false;
+};
 
 const handleTodoClick = (event) => {
   const todo = event.target;
   const checkbox = todo.previousElementSibling;
   if (!checkbox.checked) {
-    checkbox.checked = true;
     todo.classList.add("checked");
   } else {
-    checkbox.checked = false;
     todo.classList.remove("checked");
   }
+  checkbox.checked = checkbox.checked ? false : true;
 };
 
 const handleDelete = (event) => {
@@ -23,18 +34,18 @@ const handleDelete = (event) => {
 
 const addList = () => {
   const div = document.createElement("div");
-  const newList = document.createElement("input");
+  const checkbox = document.createElement("input");
   const span = document.createElement("span");
   const remove = document.createElement("span");
   const value = input.value;
 
-  newList.type = "checkbox";
-  newList.className = "input__checkbox";
+  checkbox.type = "checkbox";
+  checkbox.className = "input__checkbox";
   span.innerText = value;
   remove.innerText = "삭제";
   remove.className = "delete-btn";
   div.className = "todo-list";
-  div.append(newList);
+  div.append(checkbox);
   div.append(span);
   div.append(remove);
   todoLists.append(div);
@@ -42,6 +53,7 @@ const addList = () => {
 
   remove.addEventListener("click", handleDelete);
   span.addEventListener("click", handleTodoClick);
+  checkbox.addEventListener("click", handleBoxClick);
 };
 
 const handleSubmit = (event) => {
@@ -50,9 +62,15 @@ const handleSubmit = (event) => {
 };
 
 form.addEventListener("submit", handleSubmit);
+
 deleteBtns.forEach((btn) => {
   btn.addEventListener("click", handleDelete);
 });
+
 todos.forEach((todo) => {
   todo.addEventListener("click", handleTodoClick);
+});
+
+boxes.forEach((box) => {
+  box.addEventListener("click", handleBoxClick);
 });
