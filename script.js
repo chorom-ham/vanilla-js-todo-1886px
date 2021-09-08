@@ -2,6 +2,19 @@ const todoLists = document.getElementById("todoLists");
 const form = document.querySelector("form");
 const input = form.querySelector("input");
 const deleteBtns = document.querySelectorAll(".delete-btn");
+const todos = document.querySelectorAll(".todo");
+
+const handleTodoClick = (event) => {
+  const todo = event.target;
+  const checkbox = todo.previousElementSibling;
+  if (!checkbox.checked) {
+    checkbox.checked = true;
+    todo.classList.add("checked");
+  } else {
+    checkbox.checked = false;
+    todo.classList.remove("checked");
+  }
+};
 
 const handleDelete = (event) => {
   const list = event.target.parentElement;
@@ -28,6 +41,7 @@ const addList = () => {
   input.value = "";
 
   remove.addEventListener("click", handleDelete);
+  span.addEventListener("click", handleTodoClick);
 };
 
 const handleSubmit = (event) => {
@@ -38,4 +52,7 @@ const handleSubmit = (event) => {
 form.addEventListener("submit", handleSubmit);
 deleteBtns.forEach((btn) => {
   btn.addEventListener("click", handleDelete);
+});
+todos.forEach((todo) => {
+  todo.addEventListener("click", handleTodoClick);
 });
