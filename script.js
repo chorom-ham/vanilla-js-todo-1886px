@@ -46,7 +46,9 @@ const saveTodos = () => {
 const handleSubmit = (event) => {
   event.preventDefault();
   saveTodos();
-  paintTodo(input.value); // form으로 넘어온 todo 화면에 표시
+  if (input.value) {
+    paintTodo(input.value); // form으로 넘어온 todo 화면에 표시
+  }
 };
 
 // 랜덤 id 부여 함수
