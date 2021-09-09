@@ -2,7 +2,6 @@ const todoLists = document.getElementById("todoLists");
 const form = document.querySelector("form");
 const input = form.querySelector("input");
 const deleteBtns = document.querySelectorAll(".delete-btn");
-const todos = document.querySelectorAll(".todo");
 const boxes = document.querySelectorAll(".input__checkbox");
 
 let todoItems = [];
@@ -37,17 +36,17 @@ const handleDelete = (event) => {
   console.log(listId);
   list.remove();
   todoItems = todoItems.filter((item) => item.id !== listId);
-  saveToDos();
+  saveTodos();
 };
 
-const saveToDos = () => {
+const saveTodos = () => {
   localStorage.setItem(TODOS_LS, JSON.stringify(todoItems));
 };
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  saveToDos();
-  paintToDo(input.value);
+  saveTodos();
+  paintTodo(input.value);
 };
 
 const getRandomId = () => {
@@ -62,13 +61,13 @@ const getRandomId = () => {
   return id;
 };
 
-const paintToDo = (text) => {
+const paintTodo = (text) => {
   const todoObj = {
     id: getRandomId(),
     text: text,
   };
   todoItems.push(todoObj);
-  saveToDos();
+  saveTodos();
 
   const div = document.createElement("div");
   const checkbox = document.createElement("input");
@@ -93,16 +92,16 @@ const paintToDo = (text) => {
   checkbox.addEventListener("click", handleBoxClick);
 };
 
-const loadToDos = () => {
-  const loadedToDos = localStorage.getItem(TODOS_LS);
-  if (loadedToDos) {
-    const parsedToDos = JSON.parse(loadedToDos);
-    parsedToDos.forEach((todo) => {
-      paintToDo(todo.text);
+const loadTodos = () => {
+  const loadedTodos = localStorage.getItem(TODOS_LS);
+  if (loadedTodos) {
+    const parsedTodos = JSON.parse(loadedTodos);
+    parsedTodos.forEach((todo) => {
+      paintTodo(todo.text);
     });
   }
 };
 
-loadToDos();
+loadTodos();
 
 form.addEventListener("submit", handleSubmit);
