@@ -6,14 +6,14 @@ const todos = document.querySelectorAll(".todo");
 const boxes = document.querySelectorAll(".input__checkbox");
 
 let ids = [0, 1, 2];
-let toDos = [
+let todoItems = [
   { id: 0, text: "➕ 여기에 할 일이 추가됩니다" },
   { id: 1, text: "✔ 체크박스를 눌러 할 일을 완료합니다" },
   { id: 2, text: "❌ 오른쪽 삭제 버튼을 눌러 삭제하세요" },
 ];
-const TODOS = "toDos";
+const TODOS_LS = "toDos";
 
-localStorage.setItem(TODOS, JSON.stringify(toDos));
+localStorage.setItem(TODOS_LS, JSON.stringify(todoItems));
 
 const handleBoxClick = (event) => {
   const checkbox = event.target;
@@ -42,9 +42,24 @@ const handleDelete = (event) => {
   list.remove();
 };
 
+const saveToDos = () => {
+  localStorage.setItem(TODOS_LS, JSON.stringify(todoItems));
+};
+
 const handleSubmit = (event) => {
   event.preventDefault();
+  saveToDos();
   paintToDo(input.value);
+};
+
+const getRandomId = () => {
+  let id = Math.floor(Math.random() * 100);
+  let exists = todoItems.includes(id);
+  while (exists) {
+    id = Math.floor(Math.random() * 100);
+    exists = todoItems.includes(id);
+  }
+  return id;
 };
 
 const paintToDo = (text) => {
@@ -67,11 +82,18 @@ const paintToDo = (text) => {
   remove.addEventListener("click", handleDelete);
   span.addEventListener("click", handleTodoClick);
   checkbox.addEventListener("click", handleBoxClick);
+
+  const todoObj = {
+    id: getRandomId(),
+    text: text,
+  };
+
+  todoItems.push(todoObj);
+  saveToDos();
 };
 
 const loadToDos = () => {
-  const loadedToDos = localStorage.getItem(TODOS);
-
+  const loadedToDos = localStorage.getItem(TODOS_LS);
   if (loadedToDos) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach((todo) => {
@@ -83,15 +105,3 @@ const loadToDos = () => {
 loadToDos();
 
 form.addEventListener("submit", handleSubmit);
-
-deleteBtns.forEach((btn) => {
-  btn.addEventListener("click", handleDelete);
-});
-
-todos.forEach((todo) => {
-  todo.addEventListener("click", handleTodoClick);
-});
-
-boxes.forEach((box) => {
-  box.addEventListener("click", handleBoxClick);
-});
