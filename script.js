@@ -5,15 +5,8 @@ const deleteBtns = document.querySelectorAll(".delete-btn");
 const todos = document.querySelectorAll(".todo");
 const boxes = document.querySelectorAll(".input__checkbox");
 
-let ids = [0, 1, 2];
-let todoItems = [
-  { id: 0, text: "➕ 여기에 할 일이 추가됩니다" },
-  { id: 1, text: "✔ 체크박스를 눌러 할 일을 완료합니다" },
-  { id: 2, text: "❌ 오른쪽 삭제 버튼을 눌러 삭제하세요" },
-];
+let todoItems = [];
 const TODOS_LS = "toDos";
-
-localStorage.setItem(TODOS_LS, JSON.stringify(todoItems));
 
 const handleBoxClick = (event) => {
   const checkbox = event.target;
@@ -39,6 +32,8 @@ const handleTodoClick = (event) => {
 
 const handleDelete = (event) => {
   const list = event.target.parentElement;
+  const listId = list.dataset.id;
+  console.log(listId);
   list.remove();
 };
 
@@ -53,16 +48,29 @@ const handleSubmit = (event) => {
 };
 
 const getRandomId = () => {
-  let id = Math.floor(Math.random() * 100);
-  let exists = todoItems.includes(id);
+  let exists = true;
+  let id = null;
   while (exists) {
     id = Math.floor(Math.random() * 100);
-    exists = todoItems.includes(id);
+    const loadedToDos = localStorage.getItem(TODOS_LS);
+    if (loadedToDos) {
+      const parsedToDos = JSON.parse(loadedToDos);
+      exists = parsedToDos.some((obj) => {
+        obj.id === id;
+      });
+    }
   }
   return id;
 };
 
 const paintToDo = (text) => {
+  const todoObj = {
+    id: getRandomId(),
+    text: text,
+  };
+  todoItems.push(todoObj);
+  saveToDos();
+
   const div = document.createElement("div");
   const checkbox = document.createElement("input");
   const span = document.createElement("span");
@@ -71,6 +79,7 @@ const paintToDo = (text) => {
   checkbox.type = "checkbox";
   checkbox.className = "input__checkbox";
   span.innerText = text;
+  span.dataset.id = todoObj.id;
   remove.innerText = "삭제";
   remove.className = "delete-btn";
   div.className = "todo-list";
@@ -78,18 +87,11 @@ const paintToDo = (text) => {
   div.append(span);
   div.append(remove);
   todoLists.append(div);
+  input.value = "";
 
   remove.addEventListener("click", handleDelete);
   span.addEventListener("click", handleTodoClick);
   checkbox.addEventListener("click", handleBoxClick);
-
-  const todoObj = {
-    id: getRandomId(),
-    text: text,
-  };
-
-  todoItems.push(todoObj);
-  saveToDos();
 };
 
 const loadToDos = () => {
