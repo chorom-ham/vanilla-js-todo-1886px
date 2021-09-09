@@ -52,13 +52,9 @@ const getRandomId = () => {
   let id = null;
   while (exists) {
     id = Math.floor(Math.random() * 100);
-    const loadedToDos = localStorage.getItem(TODOS_LS);
-    if (loadedToDos) {
-      const parsedToDos = JSON.parse(loadedToDos);
-      exists = parsedToDos.some((obj) => {
-        obj.id === id;
-      });
-    }
+    exists = todoItems.some((obj) => {
+      obj.id === id;
+    });
   }
   return id;
 };
@@ -79,10 +75,10 @@ const paintToDo = (text) => {
   checkbox.type = "checkbox";
   checkbox.className = "input__checkbox";
   span.innerText = text;
-  span.dataset.id = todoObj.id;
   remove.innerText = "삭제";
   remove.className = "delete-btn";
   div.className = "todo-list";
+  div.dataset.id = todoObj.id;
   div.append(checkbox);
   div.append(span);
   div.append(remove);
