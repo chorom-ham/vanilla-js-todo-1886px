@@ -31,10 +31,13 @@ const handleTodoClick = (event) => {
 };
 
 const handleDelete = (event) => {
+  console.log(todoItems);
   const list = event.target.parentElement;
-  const listId = list.dataset.id;
+  const listId = Number(list.dataset.id);
   console.log(listId);
   list.remove();
+  todoItems = todoItems.filter((item) => item.id !== listId);
+  saveToDos();
 };
 
 const saveToDos = () => {
