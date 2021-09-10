@@ -81,6 +81,7 @@ const paintTodo = (text) => {
   checkbox.type = "checkbox";
   checkbox.className = "input__checkbox";
   span.innerText = text;
+  span.className = "todo__text";
   remove.innerText = "삭제";
   remove.className = "delete-btn";
   div.className = "todo-list";
