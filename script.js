@@ -9,11 +9,9 @@ document.getElementById("submit").onclick = function makelist() {
   deleteButton.innerText = "X";
   deleteButton.id = "deleteButton";
   li.appendChild(deleteButton);
-  strikeThrough(li);
+  deleteButton.addEventListener("click", function () {
+    li.classList.toggle("done");
+  });
 };
 
-function strikeThrough(item) {
-  item.addEventListener("click", function () {
-    item.classList.toggle("done");
-  });
-} //https://stackoverflow.com/questions/60929824/javascript-strikethrough
+
