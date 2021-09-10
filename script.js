@@ -3,7 +3,7 @@ const form = document.querySelector("form");
 const input = form.querySelector("input");
 
 let todoItems = []; // todo가 담길 배열
-const TODOS_LS = "toDos"; // localStorage item 이름
+const TODOS_LOCAL_STORAGE = "toDos"; // localStorage item 이름
 
 // 배열 todoItems에서 list와 동일한 id 가진 item 반환
 const findItem = (event) => {
@@ -55,7 +55,7 @@ const handleDelete = (event) => {
 
 // localStorage에 itemLists 배열 저장
 const saveTodos = () => {
-  localStorage.setItem(TODOS_LS, JSON.stringify(todoItems)); // object를 JSON 파일로 저장
+  localStorage.setItem(TODOS_LOCAL_STORAGE, JSON.stringify(todoItems)); // object를 JSON 파일로 저장
 };
 
 const handleSubmit = (event) => {
@@ -128,7 +128,7 @@ const paintTodo = (todo) => {
 
 // localStorage에 저장된 todo 가져와서 화면에 표시하기
 const loadTodos = () => {
-  const loadedTodos = localStorage.getItem(TODOS_LS);
+  const loadedTodos = localStorage.getItem(TODOS_LOCAL_STORAGE);
   if (loadedTodos) {
     const parsedTodos = JSON.parse(loadedTodos); // JSON을 object로 가져오기
     parsedTodos.forEach((todo) => {
