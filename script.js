@@ -89,7 +89,7 @@ const paintTodo = (text) => {
   div.append(checkbox);
   div.append(span);
   div.append(remove);
-  todoLists.append(div);
+  todoLists.prepend(div);
   input.value = "";
   // 이벤트 추가
   remove.addEventListener("click", handleDelete);
