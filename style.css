@@ -35,33 +35,34 @@ body {
 }
 
 main {
-  margin: 0;
-  border-color: #00462a;
+  margin: 1rem;
+  background-color: #00462a;
   border-radius: 1rem;
   float: center;
   width: 90%;
   padding: 2rem;
   align-items: center;
-  font-size: 3rem;
 }
 
 #todo_input {
-  margin: 0;
+  margin: auto;
   border: none;
   border-radius: 0rem;
   width: 80%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
+  padding: 0;
+  float: center;
+  font-size: 2rem;
 }
 
 #todo_button {
-  margin: 1rem;
+  margin: auto;
   border: none;
   border-radius: 1rem;
   width: 10%;
-  padding: 10px;
-  float: left;
+  padding: 0;
+  float: right;
+  font-size: 2rem;
+  align-items: center;
 }
 
 #todo_container {
@@ -73,4 +74,13 @@ main {
   padding: 3rem;
   align-items: center;
   font-size: 2rem;
+}
+
+#delete_button {
+  margin: 1rem;
+  border-color: greenyellow;
+  border-radius: 0.5rem;
+  width: 10%;
+  padding: 1rem;
+  float: right;
 }

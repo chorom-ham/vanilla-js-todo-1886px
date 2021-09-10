@@ -11,7 +11,7 @@ function clickButton() {
   newTodo.setAttribute("id", "li" + cnt);
   newTodo.innerHTML = todoInput.value;
   newTodo.innerHTML +=
-    "<button style='float: right:' class='todo_button' type='button' onclick='remove(" +
+    "<button style='float: right:' class='delete_button' type='button' onclick='remove(" +
     cnt +
     ")'> X </button>";
   todoList.appendChild(newTodo);
