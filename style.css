@@ -56,9 +56,9 @@ main {
 }
 
 #todo_button {
-  margin: 0;
+  margin: 1rem;
   border: none;
-  border-radius: 0rem;
+  border-radius: 1rem;
   width: 10%;
   padding: 10px;
   float: left;
