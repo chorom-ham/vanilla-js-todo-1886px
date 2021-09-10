@@ -1,9 +1,135 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream-2ExtraLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   margin: 0;
+  font-family: 'Pretendard-Regular';
+  background-color: rgb(57,81, 156);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
 }
+
+header{
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: 200;
+  padding: 15px 20px;
+  color: rgb(99, 123, 195);
+  text-align: right;
+}
+
+.mainSection{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 100px auto;
+}
+
+h1{
+  font-size: 70px;
+  font-weight: 700;
+  color: white;
+  margin: 10px; 
+}
+
+.addToListSection {
+  display: inline-flex;
+  background-color: rgb(156, 180, 249, 0.3);
+  border-radius: 15px;
+  height: 40px;
+  padding: 10px;
+  
+}
+.addToListSection input{
+  flex-grow:1;
+  margin-right: 10px;
+  border: none;
+  color: #bfcfff;
+  padding-left: 15px;
+  font-style: italic;
+  background-color: transparent;
+}
+
+.addToListSection input:focus{
+  outline: none;
+}
+
+.addToListSection button{
+  width: 40px;
+  border: none;
+  transition-duration: 0.2s;
+  background: url('./whitePlusIcon.png') no-repeat;
+  background-position: center center;
+}
+
+.addToListSection button:hover{
+  background-color: white;
+  background: url('./pinkPlusIcon.png') no-repeat;
+  background-position: center center;
+}
+.addToListSection img{
+  max-width: 100%;
+}
+
+
+#listSection{
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.listElement{
+  display: inline-flex;
+  height: 55px;
+  width: 98%;
+  padding: 0 20px;
+  margin: 3px 0px;
+  border-radius: 15px;
+  background-color: rgb(7,26,82);
+  font-size: 15px;
+  align-items: center;
+  transition-duration: 0.2s;
+}
+
+.listElement:hover{
+  box-shadow: 0 0 4px 2px rgb(215, 58, 246);
+}
+
+.listElement img{
+  margin: 0 5px;
+}
+
+.listElement .textButton{
+  flex-grow: 1;
+  border: none;
+  background-color: transparent;
+  color: white;
+  text-align: left;
+}
+
+.listElement .removeButton{
+  background: url("https://img.icons8.com/ios-glyphs/30/ffffff/xbox-x.png") no-repeat;
+  background-position: center center;
+  background-size: 1.2em;
+  border: none;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+}
+
