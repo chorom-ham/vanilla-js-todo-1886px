@@ -1,0 +1,27 @@
+/* font setting */
+@font-face {
+  font-family: "summer-calling";
+  src: url("C:\1886px\src\font") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* default setting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #00462a;
+  font-family: sans-serif;
+  color: white;
+  font-size: large;
+}
+
+body {
+  background-color: #eeeecc;
+
+  font-family: "Courier New", Courier, monospace;
+}
