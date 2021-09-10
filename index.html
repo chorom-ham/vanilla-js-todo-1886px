@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width = device-width initial-scale = 1.0" />
-
+    <!--initial-scale: 기본 배율 100% -->
     <title>Vanilla ToDo</title>
 
     <!-- CSS -->
@@ -16,30 +16,18 @@
     </header>
 
     <main>
-      <form>
-        <input
-          type="text"
-          placeholder="할 일을 입력하세요"
-          class="todo_input"
-        />
-        <button>추가</button>
-
-        <div class="selected">
-          <select name="todos" class="filter_done">
-            <option value="all">ALL</option>
-            <option value="completed">Completed</option>
-            <option value="uncompleted">Uncompleted</option>
-          </select>
-        </div>
-      </form>
+      <input type="text" placeholder="할 일을 입력하세요" id="todo_input" />
+      <button id="todo_button">추가</button>
     </main>
 
-    <div class="todo_container">
+    <div id="todo_container">
       <h4>할 일 목록</h4>
-      <ul class="todo_list"></ul>
+      <ul id="todo_list"></ul>
     </div>
 
+    <button type="button" id="delete_button">X</button>
+
     <!-- ADDING JAVA SCRIPT -->
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
