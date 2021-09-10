@@ -1,7 +1,6 @@
 const todoLists = document.getElementById("todoLists"); // todo 목록이 담긴 div
 const form = document.querySelector("form");
 const input = form.querySelector("input");
-const deleteBtns = document.querySelectorAll(".delete-btn");
 
 let todoItems = []; // todo가 담길 배열
 const TODOS_LS = "toDos"; // localStorage item 이름
