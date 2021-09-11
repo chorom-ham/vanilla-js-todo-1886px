@@ -50,6 +50,7 @@ body {
 
 .sec2 {
   margin-left: 2rem;
+  cursor: move;
 }
 
 #deleteButton {
