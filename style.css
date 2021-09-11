@@ -7,3 +7,18 @@ body {
   box-sizing: border-box;
   margin: 0;
 }
+
+header {
+  padding: 5rem 0;
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 30px auto;
+}
