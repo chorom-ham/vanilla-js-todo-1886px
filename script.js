@@ -1,14 +1,23 @@
-var button = document.getElementById("button");
-var input = document.getElementById("input");
+var button = document.getElementById("add-button");
+var input = document.getElementById("input-box");
 var list = document.getElementById("list");
 var count = 1;
+
+function enterKey() {
+  if (window.event.keyCode == 13) {
+    // 엔터키가 눌렸을 때 실행할 내용
+    addItem();
+  }
+}
 
 function addItem() {
   var temp = document.createElement("li");
   temp.setAttribute("id", "li" + count); //각 item별 id 부여
   temp.innerHTML = input.value;
   temp.innerHTML +=
-    "<button type='button' onclick='removeItem(" + count + ");'>X</button>"; //각 Item별 삭제 버튼 구현
+    "<button type='button' id='delete-button' onclick='removeItem(" +
+    count +
+    ");'>X</button>"; //각 Item별 삭제 버튼 구현
   list.appendChild(temp);
 
   temp.addEventListener("click", toggle); //item 클릭시 line-through
@@ -26,11 +35,5 @@ function toggle(event) {
     target.style.textDecoration = "line-through";
   } else {
     target.style.textDecoration = "none";
-  }
-}
-function enterkey() {
-  if (window.event.keyCode == 13) {
-    // 엔터키가 눌렸을 때 실행할 내용
-    addItem();
   }
 }

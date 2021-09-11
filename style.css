@@ -1,12 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap");
+
 html,
 body {
   margin: 0;
 }
 
 * {
+  font-family: "IBM Plex Sans KR", sans-serif;
   box-sizing: border-box;
   margin: 0;
+  background-color: rgb(255, 254, 240);
+  text-decoration: #000;
+  font-size: 20px;
 }
-input {
-  background-color: palegoldenrod;
+.container {
+  padding: 25px;
+}
+.todo-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(44, 99, 44);
+  align-items: center;
+}
+.header {
+  font-size: 40px;
+  height: 80px;
+  background-color: rgb(44, 99, 44);
+  color: white;
+  padding-left: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#input-box {
+  width: 88%;
+  font-size: 25px;
+  height: 60px;
+  text-decoration: gray;
+  padding-left: 15px;
+  background-color: white;
+}
+#add-button {
+  width: 10%;
+  height: 60px;
+  text-decoration: gray;
+  background-color: white;
+  font-size: 25px;
+}
+#delete-button {
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: rgb(44, 99, 44);
+  font-size: 15px;
+}
+section {
+  font-size: 25px;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
