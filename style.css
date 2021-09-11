@@ -2,8 +2,110 @@ html,
 body {
   margin: 0;
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
+}
+h1{
+  font-size : 3rem;
+  text-align: center;
+  border: 1rem solid darkgreen;
+  margin: 1rem;
+  padding: 2rem;
+}
+h2{
+  text-decoration-color: darkgreen;
+  margin: 1rem;
+  padding: 0rem;
+}
+@font-face {
+  font-family: "summer-calling";
+  src: url("C:\1886px\src\font") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* default setting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border: none;*/
+}
+
+header {
+  background-color: #00462a;
+  font-family: sans-serif;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+body {
+  margin: 0;
+  background-color: #eeeecc;
+  font-family: "Courier New", Courier, monospace;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+#todo_input {
+  margin: 0;
+  border: none;
+  border-radius: 0rem;
+  width: 80%;
+  padding: 10px;
+  float: left;
+  font-size: 3rem;
+}
+
+#todo_button {
+  margin: 0;
+  border: none;
+  border-radius: 0rem;
+  width: 10%;
+  padding: 10px;
+  float: left;
+}
+
+#todo_container {
+  margin: 0;
+  border-color: white;
+  border-radius: 1rem;
+  float: center;
+  width: 90%;
+  padding: 3rem;
+  align-items: center;
+  font-size: 2rem;
+}
+.todo-inputBox {
+  margin: 0;
+}
+
+.form-group {
+  padding-left: 0;
+}
+
+.show-list {
+  font-family: sans-serif;
+  padding: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  max-height: 35vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#submit-button {
+  cursor: pointer;
+}
+
+#todosBox {
+  position: relative;
+  top: 50vh;
+  margin-top: -30vh;
+  color: #333;
 }
