@@ -8,10 +8,10 @@ function addItem() {
   temp.setAttribute("id", "li" + count); //각 item별 id 부여
   temp.innerHTML = input.value;
   temp.innerHTML +=
-    "<button type='button' onclick='removeItem(" + count + ");'>삭제</button>"; //각 Item별 삭제 버튼 구현
+    "<button type='button' onclick='removeItem(" + count + ");'>X</button>"; //각 Item별 삭제 버튼 구현
   list.appendChild(temp);
 
-  temp.addEventListener("click", toggle(count)); //item 클릭시 line-through
+  temp.addEventListener("click", toggle); //item 클릭시 line-through
 
   count++;
 }
@@ -19,12 +19,18 @@ function removeItem(count) {
   var itemToRemove = document.getElementById("li" + count);
   list.removeChild(itemToRemove);
 }
-function toggle(count) {
-  var itemToLineThrough = document.getElementById("li" + count);
+function toggle(event) {
+  const target = event.target;
 
-  if (itemToLineThrough.style.textDecoration !== "line-through") {
-    itemToLineThrough.style.textDecoration = "line-through";
+  if (target.style.textDecoration !== "line-through") {
+    target.style.textDecoration = "line-through";
   } else {
-    itemToLineThrough.style.textDecoration = "none";
+    target.style.textDecoration = "none";
+  }
+}
+function enterkey() {
+  if (window.event.keyCode == 13) {
+    // 엔터키가 눌렸을 때 실행할 내용
+    addItem();
   }
 }
