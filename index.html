@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><!--원하는 제목을 입력해보세요--></title>
+    <title>텔미왓투두</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      @font-face {
+        font-family: 'IM_Hyemin-Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
   </head>
   <body>
+    <header>
+      <h1>바닐라 자바스크립트를 사용한 TO-DO APP</h1>
+    </header>
+    <main>
+      <h2>✊ 할 일 목록 ✊</h2>
+      <form id="todo-form" class="form">
+        <input type="text" placeholder="할 일을 입력하세요." />
+        <button>추가</button>
+      </form>
+      <ul id="todo-list"></ul>
+    </main>
   </body>
   <script src="script.js"></script>
 </html>
