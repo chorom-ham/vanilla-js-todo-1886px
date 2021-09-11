@@ -5,19 +5,31 @@ const todoList = document.querySelector("#todo-list");
 let todoArr = [];
 const TODOS_KEY = "todos";
 
+// 시각 불러오기
+function getClock(date) {
+    const month = String(date.getMonth()).padStart(2, "0");
+    const day = String(date.getDay()).padStart(2, "0");
+    const hour = String(date.getHours()).padStart(2, "0");
+    const minute = String(date.getMinutes()).padStart(2, "0");
+    return `${month}/${day}   ${hour}:${minute}`;
+}
+
 // 추가
 function handleTodoSubmit(event) {
     event.preventDefault();
+    const date = new Date();
     const newTodo = todoInput.value;
     todoInput.value = "";
 
     const newTodoObj = {
         text: newTodo,
-        id: Date.now() //랜덤ID
+        id: Date.now(), //랜덤ID
+        time: getClock(date),
     }
     todoArr.push(newTodoObj);
     paintTodo(newTodoObj);
     saveTodoArr();
+    console.log(getClock(date));
 }
 
 // 보이기
@@ -26,14 +38,19 @@ function paintTodo(newTodoObj) {
     li.id = newTodoObj.id;
 
     const span = document.createElement("span");
+    const time = document.createElement("span");
     const btn = document.createElement("button");
     span.innerText = newTodoObj.text;
+    span.className = "elem";
+    time.innerText = newTodoObj.time;
+    time.className = "time";
     btn.innerText = "ⓧ";
     span.addEventListener("click", doneTodo);
     btn.addEventListener("click", deleteTodo);
 
     li.appendChild(span);
-    li.appendChild(btn);    
+    li.appendChild(time);
+    li.appendChild(btn);
     todoList.appendChild(li);
 }
 
