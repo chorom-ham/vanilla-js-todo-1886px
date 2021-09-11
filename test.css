@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+h1{
+    font-size : 3rem;
+    text-align: center;
+    border: 1rem solid yellow;
+    margin: 1rem;
+    padding: 2rem;
+}
+body{
+    background-color:rgb(6, 202, 137);
+    text-align: center;
+}
+#todo_input{
+    margin: 2rem;
+    border-radius: 0rem;
+    width: 50%;
+    height: 3rem;
+    text-align: center;
+}
