@@ -3,10 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><!--원하는 제목을 입력해보세요--></title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="header">바닐라 자바스크립트를 사용한 TO-DO List</header>
+    <div class="container">
+      <form class="todo-form" onsubmit="return false;">
+        <input
+          type="text"
+          id="input-box"
+          onkeyup="enterKey()"
+          placeholder="할 일을 입력하세요"
+        />
+        <button type="button" id="add-button" onclick="addItem()">추가</button>
+      </form>
+    </div>
+    <section>할 일 목록</section>
+    <ul id="list"></ul>
   </body>
   <script src="script.js"></script>
 </html>
