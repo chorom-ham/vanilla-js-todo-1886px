@@ -68,7 +68,7 @@ main{
 #todo-list li button:hover {
   color:tomato;
 }
-
+ 
 .strikeout {
   text-decoration: line-through;
   color:dimgray;

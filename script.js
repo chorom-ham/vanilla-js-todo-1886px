@@ -67,14 +67,3 @@ if (saved) {
     todoArr = parsed;
     parsed.forEach(paintTodo); // 배열의 각 요소를 모두 보이기
 }
-
-
-
-
-
-
-
-
-
-
-
