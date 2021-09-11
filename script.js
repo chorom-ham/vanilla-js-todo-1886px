@@ -1,8 +1,8 @@
 const todoButton = document.getElementById("todo_button");
 const todoInput = document.getElementById("todo_input");
 const todoList = document.getElementById("todo_list");
-//const deleteButton = document.getElementById("delete_button");
-var cnt = 1;
+
+const count = 1;
 
 todoButton.addEventListener("click", clickButton);
 
@@ -25,5 +25,3 @@ function remove(cnt) {
   var li = document.getElementById("li" + cnt);
   todoList.removeChild(li);
 }
-
-//deleteButton.addEventListener("click", removeFromList(this));
