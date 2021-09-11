@@ -73,8 +73,8 @@ form {
 .message {
   display: block;
   position: absolute;
-  bottom: 18px;
-  left: 15px;
+  bottom: 1.125rem;
+  left: 0.938rem;
   color: rgba(0, 0, 0, 0.5);
   font-size: 0.75rem;
 }
