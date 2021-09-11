@@ -1,9 +1,86 @@
-html,
-body {
-  margin: 0;
+/* font setting */
+@font-face {
+  font-family: "summer-calling";
+  src: url("C:\1886px\src\font") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
+/* default setting */
 * {
-  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+header {
+  background-color: #00462a;
+  font-family: sans-serif;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+body {
+  margin: 0;
+  background-color: #eeeecc;
+
+  font-family: "Courier New", Courier, monospace;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+main {
+  margin: 1rem;
+  background-color: #00462a;
+  border-radius: 1rem;
+  float: center;
+  width: 90%;
+  padding: 2rem;
+  align-items: center;
+}
+
+#todo_input {
+  margin: auto;
+  border: none;
+  border-radius: 0rem;
+  width: 80%;
+  padding: 0;
+  float: center;
+  font-size: 2rem;
+}
+
+#todo_button {
+  margin: auto;
+  border: none;
+  border-radius: 1rem;
+  width: 10%;
+  padding: 0;
+  float: right;
+  font-size: 2rem;
+  align-items: center;
+}
+
+#todo_container {
+  margin: 0;
+  border-color: white;
+  border-radius: 1rem;
+  float: center;
+  width: 90%;
+  padding: 3rem;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#delete_button {
+  margin: 1rem;
+  border-color: greenyellow;
+  border-radius: 0.5rem;
+  width: 10%;
+  padding: 1rem;
+  float: right;
 }

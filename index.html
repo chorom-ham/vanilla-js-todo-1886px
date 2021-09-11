@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><!--원하는 제목을 입력해보세요--></title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width = device-width initial-scale = 1.0" />
+    <!--initial-scale: 기본 배율 100% -->
+    <title>Vanilla ToDo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
+    <header>
+      <h1>바닐라 자바스크립트를 사용한 TO-DO APP</h1>
+    </header>
+
+    <main>
+      <input type="text" placeholder="할 일을 입력하세요" id="todo_input" />
+      <button id="todo_button">추가</button>
+    </main>
+
+    <div id="todo_container">
+      <h4>할 일 목록</h4>
+      <ul id="todo_list"></ul>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
