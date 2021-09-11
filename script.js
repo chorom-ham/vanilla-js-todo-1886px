@@ -3,13 +3,6 @@ var input = document.getElementById("input-box");
 var list = document.getElementById("list");
 var count = 1;
 
-function enterKey() {
-  if (window.event.keyCode == 13) {
-    // 엔터키가 눌렸을 때 실행할 내용
-    addItem();
-  }
-}
-
 function addItem() {
   var temp = document.createElement("li");
   temp.setAttribute("id", "li" + count); //각 item별 id 부여
@@ -35,5 +28,11 @@ function toggle(event) {
     target.style.textDecoration = "line-through";
   } else {
     target.style.textDecoration = "none";
+  }
+}
+function enterKey() {
+  if (window.event.keyCode == 13) {
+    // 엔터키가 눌렸을 때 실행할 내용
+    addItem();
   }
 }
